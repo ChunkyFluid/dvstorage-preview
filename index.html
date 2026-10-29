@@ -47,20 +47,25 @@
     .brand { font-weight: 700; text-decoration: none; font-size: 1.2rem; }
     nav { display: flex; gap: 1rem; align-items: center; }
     nav a { text-decoration: none; font-weight: 600; }
-    .pay { border: 1px solid var(--ink); border-radius: 6px; padding: 0.4rem 0.7rem; }
+    .pay, .rent-nav { border-radius: 6px; padding: 0.4rem 0.7rem; font-weight: 700; text-decoration: none; }
+    .pay { border: 1px solid var(--ink); }
+    .rent-nav { background: var(--yellow); color: #1c1915; }
     .hero { position: relative; min-height: 420px; color: #fff; display: flex; align-items: flex-end; }
     .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
     .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,24,28,.72), rgba(20,24,28,.05) 55%); }
     .hero-copy { position: relative; z-index: 1; padding: 2rem 4vw 1.6rem; max-width: 640px; }
     h1 { margin: 0 0 0.4rem; font-size: clamp(2.1rem, 4vw, 3.2rem); line-height: 1.02; letter-spacing: -0.03em; }
     .hero p { margin: 0 0 1rem; font-size: 1.15rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.55rem; }
     .call { display: inline-block; background: var(--yellow); color: #1c1915; text-decoration: none; font-weight: 700; border-radius: 6px; padding: 0.75rem 1rem; }
+    .call.phone { background: transparent; color: #fff; border: 2px solid #fff; }
     .lots { display: flex; gap: 0.5rem; padding: 0.8rem 4vw; background: #fff; border-bottom: 1px solid var(--line); overflow-x: auto; }
     .lots button { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 0.45rem 0.8rem; font-weight: 600; white-space: nowrap; }
     .lots button[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
     main { width: min(1100px, calc(100% - 8vw)); margin: 0 auto; padding: 1.4rem 0 2.5rem; }
     .reviews { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-bottom: 1rem; }
     #facts { margin: 0 0 1rem; max-width: 52rem; }
+    #rent-note { margin: 0 0 0.7rem; font-weight: 700; }
     blockquote { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 0.9rem 1rem; }
     blockquote p { margin: 0 0 0.4rem; font-weight: 650; font-weight: 600; }
     blockquote footer { color: var(--muted); font-size: 0.92rem; border: 0; }
@@ -104,7 +109,7 @@
       .reviews blockquote p { margin: 0; font-size: 0.92rem; }
       .reviews blockquote footer { margin-top: 0.15rem; font-size: 0.8rem; }
       #facts { order: 3; font-size: 0.92rem; margin: 0.85rem 0 0; }
-      #units { order: 2; }
+      #rent-note, #units { order: 2; }
       .unit { grid-template-columns: 1fr; padding: 0; gap: 0; overflow: hidden; }
       .unit img { width: 100%; height: 168px; border-radius: 0; object-fit: cover; object-position: center 42%; }
       .unit.fit img { object-fit: contain; background: #eef1f3; }
@@ -130,6 +135,7 @@
     <nav>
       <a class="quiet" href="#units">Units</a>
       <a class="quiet" href="tel:+13193334845">319-333-4845</a>
+      <a class="rent-nav" id="rent-nav" href="https://www.vsrvstorage.com/pages/rent">Rent online</a>
       <a class="pay" id="pay" href="https://www.vsrvstorage.com/login">Pay</a>
     </nav>
   </header>
@@ -139,7 +145,10 @@
     <div class="hero-copy">
       <h1 id="headline">RV and boat storage in Iowa City.</h1>
       <p id="pitch">Dan owns it. You talk to Dan. The lot is on the southwest side, at 3037 IWV Road SW, about a quarter mile from the landfill.</p>
-      <a class="call" href="tel:+13193334845">Call or text Dan</a>
+      <div class="actions">
+        <a class="call" id="rent-online" href="https://www.vsrvstorage.com/pages/rent">Rent online</a>
+        <a class="call phone" href="tel:+13193334845">Call or text Dan</a>
+      </div>
     </div>
   </section>
 
@@ -156,6 +165,7 @@
       <blockquote><p>“I felt fine leaving valuables there.”</p><footer>Andree Izoco</footer></blockquote>
     </div>
     <p id="facts">V's stores RVs, boats, trailers, cars, and trucks at 3037 IWV Road SW, Iowa City, IA 52246. The door is 14 feet tall and 12 feet wide. Every bay has a concrete floor, a metal roll-up door, and a 20-amp outlet. Dan owns the lot. Call or text him at (319) 333-4845.</p>
+    <p id="rent-note">You can rent a unit online. Choose a size, then finish on the rental page.</p>
     <div class="units" id="units"></div>
   </main>
 
@@ -241,6 +251,8 @@
       document.getElementById("hero").alt = lot.alt;
       document.getElementById("address").textContent = lot.address;
       document.getElementById("pay").href = lot.pay;
+      document.getElementById("rent-nav").href = lot.rent;
+      document.getElementById("rent-online").href = lot.rent;
       var titles = {
         west: "RV Storage Iowa City | Boat and Trailer Storage on IWV Road",
         east: "Self Storage in Iowa City | 2800 Commerce Drive | V's Storage",
@@ -258,7 +270,7 @@
         var alt = heading + " at V's in " + place;
         var copy = unit[2] ? "<p>" + unit[2] + "</p>" : "";
         var fit = unit[4] ? " fit" : "";
-        return '<article class="unit' + fit + '"><img src="' + unit[3] + '" alt="' + alt + '"><div><h2>' + heading + '</h2>' + copy + '</div><a class="rent" href="' + lot.rent + '"><span>Starting at $' + unit[1] + '/mo</span>Check availability</a></article>';
+        return '<article class="unit' + fit + '"><img src="' + unit[3] + '" alt="' + alt + '"><div><h2>' + heading + '</h2>' + copy + '</div><a class="rent" href="' + lot.rent + '"><span>Starting at $' + unit[1] + '/mo</span>Rent online</a></article>';
       }).join("");
       document.querySelectorAll(".lots button").forEach(function (button) {
         button.setAttribute("aria-pressed", button.dataset.lot === id ? "true" : "false");
