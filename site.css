@@ -32,9 +32,6 @@ main { width: min(1100px, calc(100% - 8vw)); margin: 0 auto; padding: 1.4rem 0 2
 .stars { margin: 0 0 0.4rem; color: var(--star); letter-spacing: 0.14em; font-size: 1.2rem; font-weight: 400; line-height: 1; }
 .stars span { -webkit-text-stroke: 0.35px var(--star-edge); paint-order: stroke fill; }
 .reviews blockquote footer { padding: 0; background: transparent; border: 0; }
-.review-controls { display: flex; gap: 0.4rem; margin-top: 0.55rem; }
-.review-controls button { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 0.35rem 0.7rem; font-weight: 600; }
-.reviews.is-rotating { display: block; max-width: 40rem; }
 .reviews.is-rotating blockquote[hidden] { display: none; }
 #facts { margin: 0 0 1rem; max-width: 52rem; }
 #facts a { font-weight: 600; text-decoration: underline; text-underline-offset: 0.14em; }
@@ -86,7 +83,14 @@ footer a { color: var(--ink); }
   .reviews blockquote { flex: 0 0 min(15.5rem, 82%); scroll-snap-align: start; padding: 0.55rem 0.7rem; }
   .reviews blockquote p { margin: 0; font-size: 0.92rem; }
   .reviews blockquote footer { margin-top: 0.15rem; font-size: 0.8rem; }
-  .reviews.is-rotating { display: block; margin: 0 0 0.65rem; padding: 0; overflow: visible; }
+  .reviews.is-rotating {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 0 0.65rem;
+    padding: 0;
+    overflow: visible;
+  }
+  .reviews.is-rotating blockquote { flex: none; width: auto; }
   .reviews .stars { margin: 0 0 0.25rem; }
   #facts { order: 3; font-size: 0.92rem; margin: 0.85rem 0 0; }
   .faq { order: 4; margin-top: 0.85rem; }
