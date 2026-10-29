@@ -3,18 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RV and boat storage in Iowa City | V's Storage</title>
-  <meta name="description" content="RV, boat, and trailer storage at 3037 IWV Road SW, Iowa City, IA 52246. Dan owns it. Call or text (319) 333-4845. Doors are 14 feet tall. From $270 a month.">
+  <title>RV Storage Iowa City | Boat and Trailer Storage on IWV Road</title>
+  <meta name="description" content="RV, boat, and trailer storage at 3037 IWV Road SW, Iowa City, IA 52246. Dan owns it. 14-foot-tall doors, concrete floors, and a 20-amp outlet. Call (319) 333-4845. Starting at $270 a month.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SelfStorage",
-    "name": "V's RV and Large Storage",
-    "description": "Locally owned RV, boat, and trailer storage on the southwest side of Iowa City. Tenants talk to the owner, Dan.",
-    "telephone": "+1-319-333-4845",
-    "email": "vsselfstorage@gmail.com",
-    "address": { "@type": "PostalAddress", "streetAddress": "3037 IWV Road SW", "addressLocality": "Iowa City", "addressRegion": "IA", "postalCode": "52246" },
-    "url": "https://www.vsrvstorage.com/pages/rent"
+    "@graph": [
+      {
+        "@type": "SelfStorage",
+        "name": "V's RV and Large Storage",
+        "description": "Locally owned RV, boat, and trailer storage at 3037 IWV Road SW, Iowa City, IA 52246. The door is 14 feet tall and 12 feet wide.",
+        "telephone": "+1-319-333-4845",
+        "email": "vsselfstorage@gmail.com",
+        "address": { "@type": "PostalAddress", "streetAddress": "3037 IWV Road SW", "addressLocality": "Iowa City", "addressRegion": "IA", "postalCode": "52246" },
+        "url": "https://www.vsrvstorage.com/pages/rent",
+        "makesOffer": [
+          { "@type": "Offer", "name": "35 x 14 RV storage", "price": "270", "priceCurrency": "USD", "availability": "https://schema.org/LimitedAvailability" },
+          { "@type": "Offer", "name": "40 x 14 RV storage", "price": "305", "priceCurrency": "USD", "availability": "https://schema.org/LimitedAvailability" },
+          { "@type": "Offer", "name": "50 x 14 RV storage", "price": "385", "priceCurrency": "USD", "availability": "https://schema.org/LimitedAvailability" },
+          { "@type": "Offer", "name": "50 x 30 RV storage", "price": "750", "priceCurrency": "USD", "availability": "https://schema.org/LimitedAvailability" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Where can I store an RV or boat in Iowa City?", "acceptedAnswer": { "@type": "Answer", "text": "At V's RV and Large Storage, 3037 IWV Road SW, Iowa City, IA 52246, about a quarter mile from the Iowa City landfill. The door is 14 feet tall and 12 feet wide. Call Dan at (319) 333-4845." } },
+          { "@type": "Question", "name": "Is there self storage in Solon, Iowa?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. V's Self Storage is at 504 Windflower Lane, Solon, IA 52333. Dan owns it. Household units start at $74 a month." } },
+          { "@type": "Question", "name": "Who do I talk to about a storage unit?", "acceptedAnswer": { "@type": "Answer", "text": "Dan, the owner. Call or text (319) 333-4845. He is the person who answers." } }
+        ]
+      }
+    ]
   }
   </script>
   <style>
@@ -31,7 +49,7 @@
     nav a { text-decoration: none; font-weight: 600; }
     .pay { border: 1px solid var(--ink); border-radius: 6px; padding: 0.4rem 0.7rem; }
     .hero { position: relative; min-height: 420px; color: #fff; display: flex; align-items: flex-end; }
-    .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
     .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,24,28,.72), rgba(20,24,28,.05) 55%); }
     .hero-copy { position: relative; z-index: 1; padding: 2rem 4vw 1.6rem; max-width: 640px; }
     h1 { margin: 0 0 0.4rem; font-size: clamp(2.1rem, 4vw, 3.2rem); line-height: 1.02; letter-spacing: -0.03em; }
@@ -41,7 +59,8 @@
     .lots button { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 0.45rem 0.8rem; font-weight: 600; white-space: nowrap; }
     .lots button[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
     main { width: min(1100px, calc(100% - 8vw)); margin: 0 auto; padding: 1.4rem 0 2.5rem; }
-    .reviews { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-bottom: 1.4rem; }
+    .reviews { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.7rem; margin-bottom: 1rem; }
+    #facts { margin: 0 0 1rem; max-width: 52rem; }
     blockquote { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 0.9rem 1rem; }
     blockquote p { margin: 0 0 0.4rem; font-weight: 650; font-weight: 600; }
     blockquote footer { color: var(--muted); font-size: 0.92rem; border: 0; }
@@ -49,18 +68,23 @@
     .unit { display: grid; grid-template-columns: 112px 1fr auto; gap: 0.9rem; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 0.55rem; }
     .unit img { width: 112px; height: 84px; object-fit: cover; border-radius: 4px; }
     .unit h2 { margin: 0; font-size: 1.15rem; }
-    .unit p { margin: 0.15rem 0 0; color: var(--muted); }
+    .unit p { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.95rem; }
     .rent { display: inline-block; background: var(--yellow); color: #1c1915; text-decoration: none; font-weight: 700; border-radius: 6px; padding: 0.7rem 0.9rem; text-align: center; min-width: 118px; }
     .rent span { display: block; font-size: 0.78rem; font-weight: 600; }
     footer { background: #fff; border-top: 1px solid var(--line); padding: 1.2rem 4vw 1.6rem; color: var(--muted); }
     footer p { margin: 0.3rem 0; max-width: 46rem; }
     footer a { color: var(--ink); }
     @media (min-width: 960px) {
-      .units { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; align-items: stretch; }
-      .unit { grid-template-columns: 1fr; grid-template-rows: auto 1fr auto; align-items: stretch; padding: 0; gap: 0; overflow: hidden; height: 100%; }
-      .unit img { width: 100%; height: 170px; border-radius: 0; object-position: center 62%; }
-      .unit > div { padding: 0.75rem 0.9rem 0; }
-      .rent { margin: 0.7rem 0.9rem 0.9rem; align-self: end; }
+      .units.wide { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; align-items: stretch; }
+      .units.wide .unit { grid-template-columns: 1fr; grid-template-rows: auto 1fr auto; align-items: stretch; padding: 0; gap: 0; overflow: hidden; height: 100%; }
+      .units.wide .unit img { width: 100%; height: 210px; border-radius: 0; object-fit: cover; object-position: center 42%; }
+      .units.wide .unit.fit img { object-fit: contain; background: #eef1f3; }
+      .units.wide .unit > div { padding: 0.8rem 0.9rem 0; }
+      .units.wide .rent { margin: 0.75rem 0.9rem 0.9rem; align-self: end; }
+      .units.rv { grid-template-columns: 1fr 1fr; gap: 0.8rem; align-items: stretch; }
+      .units.rv .unit { grid-template-columns: 150px 1fr; align-items: start; padding: 0.7rem; height: 100%; }
+      .units.rv .unit img { width: 150px; height: 200px; object-fit: cover; }
+      .units.rv .rent { grid-column: 2; justify-self: start; margin-top: 0.7rem; }
     }
     @media (max-width: 720px) {
       .reviews { grid-template-columns: 1fr; }
@@ -81,7 +105,7 @@
   </header>
 
   <section class="hero" id="top">
-    <img id="hero" src="images/west.jpg" alt="RV storage buildings at 3037 IWV Road SW">
+    <img id="hero" src="images/rv-lot.jpg" alt="RV storage buildings at 3037 IWV Road SW, Iowa City">
     <div class="hero-copy">
       <h1 id="headline">RV and boat storage in Iowa City.</h1>
       <p id="pitch">Dan owns it. You talk to Dan. The lot is on the southwest side, at 3037 IWV Road SW, about a quarter mile from the landfill.</p>
@@ -101,6 +125,7 @@
       <blockquote><p>“Clean, and the owner was easy to work with.”</p><footer>Emilee Gevock</footer></blockquote>
       <blockquote><p>“I felt fine leaving valuables there.”</p><footer>Andree Izoco</footer></blockquote>
     </div>
+    <p id="facts">V's stores RVs, boats, trailers, cars, and trucks at 3037 IWV Road SW, Iowa City, IA 52246. The door is 14 feet tall and 12 feet wide. Every bay has a concrete floor, a metal roll-up door, and a 20-amp outlet. Dan owns the lot. Call or text him at (319) 333-4845.</p>
     <div class="units" id="units"></div>
   </main>
 
@@ -110,63 +135,69 @@
   </footer>
 
   <script>
+    var rv = "Door is 14' tall and 12' wide. 20 Amp Electrical Outlet (included in prices). All Concrete. Metal roll-up doors. Ideal for Large Motorhomes/RV's. Boats. Cars. Trucks. People with a lot of stuff. Business owners looking for extra storage space.";
     var lots = {
       east: {
-        headline: "You talk to the owner.",
-        pitch: "Dan owns this Iowa City lot. He is the only person you will talk to.",
+        headline: "Self storage in Iowa City.",
+        pitch: "Dan owns this lot on Commerce Drive. He is the only person you will talk to.",
+        facts: "Household storage at 2800 Commerce Drive, Iowa City, IA 52240. Dan has run this lot for years, and you talk to him, not a call center. RV, boat, and trailer storage is at the west lot on IWV Road.",
         hero: "images/yellow.jpg",
-        alt: "Yellow storage doors at V's on Commerce Drive",
+        alt: "Yellow storage doors at V's Self Storage on Commerce Drive in Iowa City",
         address: "2800 Commerce Drive, Iowa City, IA 52240",
         pay: "https://www.vsselfstorageiowacity.com/login",
         rent: "https://www.vsselfstorageiowacity.com/pages/rent",
         units: [
-          ["5×10", 70, "A closet.", "images/open-5.jpg"],
-          ["10×10", 90, "About a small bedroom.", "images/open-10.jpg"],
-          ["10×15", 105, "Bedroom plus a sofa.", "images/open-15.jpg"],
-          ["10×20", 130, "A one-bedroom apartment.", "images/open-20.jpg"],
-          ["10×25", 140, "Room for the awkward pieces.", "images/open-25.jpg"],
-          ["10×30", 160, "A car, or a house worth of boxes.", "images/open-30.jpg"],
-          ["12×30", 195, "A wider version of the 10×30.", "images/open-30.jpg"]
+          ["5 x 10", "70", "It fits furnishings of a mid-sized bedroom, including a queen-sized bed, a dresser, a TV and several small to medium-sized boxes.", "images/ic-5x10.jpg"],
+          ["10 x 10", "90", "It fits the contents of an entire family room or two full bedrooms, including several small to medium-sized boxes.", "images/ic-10x10.jpg"],
+          ["10 x 15", "105", "It fits the contents of three full bedrooms and larger items such as a piano, couches, tables, or large-screen TVs, plus several medium to large-sized boxes.", "images/ic-10x15.jpg"],
+          ["10 x 20", "130", "It fits the contents of a multi-bedroom house, including several oversized items like a couch, a refrigerator, a washer/dryer and a dining room set or several large boxes.", "images/ic-10x20.jpg"],
+          ["10 x 25", "140", "It fits the contents of a multi-bedroom house, including several oversized items like a couch, a refrigerator, a washer/dryer and a dining room set or several large boxes.", "images/east-10-x-25.jpg", true],
+          ["10 x 30", "160", "It fits the contents of a multi-bedroom house, including several oversized items like a couch, a refrigerator, a washer/dryer and a dining room set or several large boxes.", "images/ic-10x30.jpg"],
+          ["12 x 30", "195", "It fits the contents of a very large house. Can fit all cars, most truck, small trailers, campers, and boats. Would also be the ideal space for a contractor. Door height is 10'.", "images/east-12-x-30.jpg", true]
         ]
       },
       solon: {
-        headline: "Storage in Solon.",
+        headline: "Self storage in Solon.",
         pitch: "Dan owns the units on Windflower Lane. If you need a unit in Solon, call him.",
+        facts: "V's Self Storage is at 504 Windflower Lane, Solon, IA 52333, east of Highway 1. It is the local storage in Solon. RV and boat storage is not at this lot. That is on IWV Road in Iowa City.",
         hero: "images/orange.jpg",
-        alt: "Orange storage doors at 504 Windflower Lane in Solon",
+        alt: "Orange storage doors at V's Self Storage on Windflower Lane in Solon",
         address: "504 Windflower Lane, Solon, IA 52333",
         pay: "https://www.vsselfstoragesolon.com/login",
         rent: "https://www.vsselfstoragesolon.com/pages/rent",
         units: [
-          ["5×10", 74, "A closet.", "images/open-5.jpg"],
-          ["10×10", 95, "About a small bedroom.", "images/open-10.jpg"],
-          ["10×15", 111, "Bedroom plus a sofa.", "images/open-15.jpg"],
-          ["10×20", 126, "A one-bedroom apartment.", "images/open-20.jpg"],
-          ["10×25", 147, "Room for the awkward pieces.", "images/open-25.jpg"],
-          ["10×30", 168, "A car, or a house worth of boxes.", "images/open-30.jpg"],
-          ["12×30", 199, "A wider version of the 10×30.", "images/open-30.jpg"],
-          ["20×30", 289, "Oversized bay.", "images/open-30.jpg"],
-          ["30×30", 368, "Oversized bay.", "images/open-30.jpg"],
-          ["42×30", 630, "The largest bay in Solon.", "images/open-30.jpg"]
+          ["5 x 10", "74", "It fits furnishings of a mid-sized bedroom, including a queen-sized bed, a dresser, a TV and several small to medium-sized boxes.", "images/solon-bay-5x10.jpg"],
+          ["10 x 10", "95", "It fits the contents of an entire family room or two full bedrooms, including several small to medium-sized boxes.", "images/solon-bay-10x10.jpg"],
+          ["10 x 15", "111", "It fits the contents of three full bedrooms and larger items such as a piano, couches, tables, or large-screen TVs, plus several medium to large-sized boxes.", "images/solon-bay-10x15.jpg"],
+          ["10 x 20", "126", "It fits the contents of a multi-bedroom house, including several oversized items like a couch, a refrigerator, a washer/dryer and a dining room set or several large boxes. Fits most cars, trucks, and some boats.", "images/solon-bay-10x20.jpg"],
+          ["10 x 25", "147", "It fits the contents of a multi-bedroom house, including several oversized items like a couch, a refrigerator, a washer/dryer and a dining room set or several large boxes. Fits all cars, trucks, and some boats.", "images/solon-bay-10x25.jpg"],
+          ["10 x 30", "168", "It fits the contents of a multi-bedroom house, including several oversized items like a couch, a refrigerator, a washer/dryer and a dining room set or several large boxes. Fits all cars, trucks, and some boats.", "images/solon-bay-10x30.jpg"],
+          ["12 x 30", "199", "It fits the contents of a very large house. Can fit all cars, most truck, small trailers, campers, and boats. Would also be the ideal space for a contractor. Door is 10' high and 10' wide.", "images/solon-12-x-30.jpg", true],
+          ["20 x 30", "289", "", "images/solon-buildings.jpg"],
+          ["30 x 30", "368", "", "images/solon-buildings.jpg"],
+          ["42 x 30", "630", "It fits the contents of a very large house. Can fit all cars, most truck, small trailers, campers, and boats. Would also be the ideal space for a contractor. Door height is 10'.", "images/solon-buildings.jpg"]
         ]
       },
       west: {
         headline: "RV and boat storage in Iowa City.",
         pitch: "Dan owns it. You talk to Dan. The lot is on the southwest side, at 3037 IWV Road SW, about a quarter mile from the landfill.",
-        hero: "images/west.jpg",
-        alt: "RV storage buildings at 3037 IWV Road SW",
+        facts: "V's stores RVs, boats, trailers, cars, and trucks at 3037 IWV Road SW, Iowa City, IA 52246. The door is 14 feet tall and 12 feet wide. Every bay has a concrete floor, a metal roll-up door, and a 20-amp outlet. Call or text Dan at (319) 333-4845.",
+        hero: "images/rv-lot.jpg",
+        alt: "RV storage buildings with tall roll-up doors at 3037 IWV Road SW, Iowa City",
         address: "3037 IWV Road SW, Iowa City, IA 52246",
         pay: "https://www.vsrvstorage.com/login",
         rent: "https://www.vsrvstorage.com/pages/rent",
         units: [
-          ["35×14", 270, "Travel trailer or boat. Door is 14 ft tall.", "images/west.jpg"],
-          ["35×17", 325, "A wider 35-foot bay.", "images/west.jpg"],
-          ["40×14", 305, "Longer trailer or a Class C.", "images/west.jpg"],
-          ["40×17", 400, "40 feet, with a walk-in door.", "images/west.jpg"],
-          ["45×14", 345, "45 feet deep.", "images/west.jpg"],
-          ["50×14", 385, "Room for a Class A.", "images/west.jpg"],
-          ["50×16", 350, "50 feet, a bit wider.", "images/west.jpg"],
-          ["50×30", 750, "The largest bay on the lot.", "images/west.jpg"]
+          ["35 x 14", "270", rv, "images/west-rv-large-storage-35-x-14.jpg"],
+          ["35 x 17", "325", rv, "images/west-rv-large-storage-35-x-17.jpg"],
+          ["40 x 14", "305", rv, "images/west-rv-large-storage-40-x-14.jpg"],
+          ["40 x 17", "400", rv + " Unit also includes a walk in door.", "images/west-40x17.jpg"],
+          ["45 x 14", "345", rv, "images/west-rv-large-storage-45-x-14.jpg"],
+          ["50 x 14", "385", rv, "images/west-rv-large-storage-50-x-14.jpg"],
+          ["50 x 16", "350", rv, "images/west-rv-large-storage-50-x-16.jpg"],
+          ["50 x 17", "446", rv, "images/west-50x17.jpg"],
+          ["50 x 17, walk-in door", "394.17", "Door is 14' tall and 12' wide. 20 Amp Electrical Outlet (included in prices). All Concrete. Metal roll-up doors. Walk-in door. Ideal for Large Motorhomes/RV's. Boats. Cars. Trucks. People with a lot of stuff. Business owners looking for extra storage space.", "images/west-50x17-walkin.jpg"],
+          ["50 x 30", "750", rv, "images/west-rv-large-storage-50-x-30.jpg"]
         ]
       }
     };
@@ -175,12 +206,29 @@
       var lot = lots[id];
       document.getElementById("headline").textContent = lot.headline;
       document.getElementById("pitch").textContent = lot.pitch;
+      document.getElementById("facts").textContent = lot.facts;
       document.getElementById("hero").src = lot.hero;
       document.getElementById("hero").alt = lot.alt;
       document.getElementById("address").textContent = lot.address;
       document.getElementById("pay").href = lot.pay;
-      document.getElementById("units").innerHTML = lot.units.map(function (unit) {
-        return '<article class="unit"><img src="' + unit[3] + '" alt=""><div><h2>' + unit[0] + '</h2><p>' + unit[2] + '</p></div><a class="rent" href="' + lot.rent + '"><span>Rent</span>$' + unit[1] + '/mo</a></article>';
+      var titles = {
+        west: "RV Storage Iowa City | Boat and Trailer Storage on IWV Road",
+        east: "Self Storage in Iowa City | 2800 Commerce Drive | V's Storage",
+        solon: "Self Storage in Solon, Iowa | 504 Windflower Lane | V's Storage"
+      };
+      document.title = titles[id];
+      var list = document.getElementById("units");
+      list.className = "units " + (id === "west" ? "rv" : "wide");
+      list.innerHTML = lot.units.map(function (unit) {
+        var place = id === "solon" ? "Solon, Iowa" : "Iowa City";
+        var kind = id === "west" ? " RV storage" : " storage unit";
+        var heading = unit[0].indexOf("walk-in") === -1
+          ? unit[0] + kind
+          : "50 x 17 RV storage, walk-in door";
+        var alt = heading + " at V's in " + place;
+        var copy = unit[2] ? "<p>" + unit[2] + "</p>" : "";
+        var fit = unit[4] ? " fit" : "";
+        return '<article class="unit' + fit + '"><img src="' + unit[3] + '" alt="' + alt + '"><div><h2>' + heading + '</h2>' + copy + '</div><a class="rent" href="' + lot.rent + '"><span>Starting at $' + unit[1] + '/mo</span>Check availability</a></article>';
       }).join("");
       document.querySelectorAll(".lots button").forEach(function (button) {
         button.setAttribute("aria-pressed", button.dataset.lot === id ? "true" : "false");
